@@ -1,0 +1,6 @@
+@WebApiWithEfcore_HostAddress = http://localhost:5095
+
+GET {{WebApiWithEfcore_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

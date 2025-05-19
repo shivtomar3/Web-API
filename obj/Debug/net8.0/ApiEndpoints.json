@@ -1,0 +1,75 @@
+[
+  {
+    "ContainingType": "WebApiWithEfcore.Controllers.ProductsController",
+    "Method": "AddProduct",
+    "RelativePath": "api/Products/Add_Product",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "productEntity",
+        "Type": "WebApiWithEfcore.Model.ProductEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiWithEfcore.Controllers.ProductsController",
+    "Method": "DeleteProductEntity",
+    "RelativePath": "api/Products/Delete_a_product",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApiWithEfcore.Controllers.ProductsController",
+    "Method": "GetTBL_Products",
+    "RelativePath": "api/Products/Get_All_Product",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[WebApiWithEfcore.Model.ProductEntity, WebApiWithEfcore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApiWithEfcore.Controllers.ProductsController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/Products/Update_Product",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "productEntity",
+        "Type": "WebApiWithEfcore.Model.ProductEntity",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
