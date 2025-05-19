@@ -23,23 +23,23 @@ namespace WebApiWithEfcore.Service
 
 
 
-        public bool AddProduct(ProductEntity productEntity)
+        public bool AddProduct(ProductDTO product)
         {
-            _productRepository.AddProduct(productEntity);
+            _productRepository.AddProduct(product);
          
             return true;
         }
 
 
-        public bool UpdateProduct(int id, ProductEntity productEntity)
+        public bool UpdateProduct(int id, ProductDTO product)
         {
-            _productRepository.PutProduct(id, productEntity);
+            _productRepository.PutProduct(id, product);
             return true;
         }
 
 
 
-        public List<ProductEntity> GetProduct()
+        public List<ProductDTO> GetProduct()
         {
 
             var Product = _productRepository.GetProduct();

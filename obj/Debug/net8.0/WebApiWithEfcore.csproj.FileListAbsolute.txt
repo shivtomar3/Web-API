@@ -263,3 +263,4 @@ D:\april\WebApiWithEfcore\obj\Debug\net8.0\WebApiWithEfcore.genruntimeconfig.cac
 D:\april\WebApiWithEfcore\obj\Debug\net8.0\ref\WebApiWithEfcore.dll
 D:\april\WebApiWithEfcore\bin\Debug\net8.0\AutoMapper.dll
 D:\april\WebApiWithEfcore\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\april\WebApiWithEfcore\obj\Debug\net8.0\WebApiWithEfcore.sourcelink.json

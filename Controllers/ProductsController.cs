@@ -30,7 +30,7 @@ namespace WebApiWithEfcore.Controllers
 
         // GET: api/ProductEntities
         [HttpGet("Get_All_Product")]
-        public  List<ProductEntity> GetTBL_Products()
+        public  List<ProductDTO> GetTBL_Products()
         {
             var Product= _productService.GetProduct();
 
@@ -42,15 +42,11 @@ namespace WebApiWithEfcore.Controllers
        
 
         [HttpPut("Update_Product")]
-        public IActionResult UpdateProduct(int id, ProductEntity productEntity)
+        public IActionResult UpdateProduct(int id, ProductDTO Product)
         {
-            if (id != productEntity.Id)
-            {
-                return BadRequest();
-            }
-          
-            
-             var  product= _productService.UpdateProduct(id, productEntity);
+
+
+            var product = _productService.UpdateProduct(id, Product);
            
             
 
@@ -58,9 +54,9 @@ namespace WebApiWithEfcore.Controllers
         }
 
         [HttpPost("Add_Product")]
-        public ActionResult AddProduct(ProductEntity productEntity)
+        public ActionResult AddProduct(ProductDTO product)
         {
-            _productService.AddProduct(productEntity);
+            _productService.AddProduct(product);
             return Ok();
         }
 

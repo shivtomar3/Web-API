@@ -1,8 +1,10 @@
-﻿namespace WebApiWithEfcore.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebApiWithEfcore.Model
 {
     public class ProductEntity
     {
-
+        [Key]
         public int Id{ set;get;}
         public string Name { get; set; }
         public double Price { get; set; }
@@ -13,7 +15,7 @@
 
         public string UpdatedBy { set; get; }
  
-        public DateTime UpdateOn { set; get; }
+        public DateTime? UpdateOn { set; get; }
 
     }
     

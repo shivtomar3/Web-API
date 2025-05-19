@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using WebApiWithEfcore.Model;
 using WebApiWithEfcore.Service;
 
@@ -11,26 +13,36 @@ namespace WebApiWithEfcore.Repository
 
         private readonly ProductDbContext _context;
 
-        public ProductRepository(ProductDbContext context)
+        private readonly IMapper _mapper;
+
+        public ProductRepository(ProductDbContext context,IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
+        
             
-            public List<ProductEntity> GetProduct()
+            public List<ProductDTO> GetProduct()
             {
-            return _context.TBL_Products.ToList();
+            List<ProductEntity> entity = _context.TBL_Products.ToList();
+
+            List<ProductDTO> product = _mapper.Map<List < ProductDTO > >(entity);
+
+            return product;
             }
 
 
 
 
-            public bool PutProduct(int id, ProductEntity productEntity)
+            public bool PutProduct(int id, ProductDTO product)
             {
-              
-                
 
-                _context.Entry(productEntity).State = EntityState.Modified;
+            ProductEntity entity = _mapper.Map<ProductEntity>(product);
+            entity.UpdatedBy = "admin";
+            entity.UpdateOn= DateTime.Now;
+
+            _context.Entry(entity).State = EntityState.Modified;
 
                 try
                 {
@@ -52,9 +64,19 @@ namespace WebApiWithEfcore.Repository
             }
 
       
-        public bool AddProduct(ProductEntity product)
+        public bool AddProduct(ProductDTO product)
         {
-            _context.TBL_Products.Add(product);
+
+            ProductEntity entity = _mapper.Map<ProductEntity>(product) ;
+
+            entity.CreatedBy = "admin";
+            entity.CreatedOn = DateTime.Now;
+            entity.UpdateOn = null;
+            entity.UpdatedBy = "";
+
+
+
+            _context.TBL_Products.Add(entity);
             _context.SaveChanges();
             return true;
         }

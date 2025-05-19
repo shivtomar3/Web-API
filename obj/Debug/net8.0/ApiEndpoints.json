@@ -8,8 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "productEntity",
-        "Type": "WebApiWithEfcore.Model.ProductEntity",
+        "Name": "product",
+        "Type": "WebApiWithEfcore.Model.ProductDTO",
         "IsRequired": true
       }
     ],
@@ -41,7 +41,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebApiWithEfcore.Model.ProductEntity, WebApiWithEfcore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[WebApiWithEfcore.Model.ProductDTO, WebApiWithEfcore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -65,8 +65,8 @@
         "IsRequired": false
       },
       {
-        "Name": "productEntity",
-        "Type": "WebApiWithEfcore.Model.ProductEntity",
+        "Name": "Product",
+        "Type": "WebApiWithEfcore.Model.ProductDTO",
         "IsRequired": true
       }
     ],
