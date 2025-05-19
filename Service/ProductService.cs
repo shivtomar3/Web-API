@@ -39,7 +39,7 @@ namespace WebApiWithEfcore.Service
 
 
 
-        public List<ProductDTO> GetProduct()
+        public List<ProductDTOforID> GetProduct()
         {
 
             var Product = _productRepository.GetProduct();

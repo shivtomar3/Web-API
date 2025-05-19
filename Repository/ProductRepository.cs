@@ -2,12 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Data;
 using WebApiWithEfcore.Model;
 using WebApiWithEfcore.Service;
 
 namespace WebApiWithEfcore.Repository
 {
-    public class ProductRepository :DbContext
+    public class ProductRepository
     {
 
 
@@ -23,11 +24,11 @@ namespace WebApiWithEfcore.Repository
 
         
             
-            public List<ProductDTO> GetProduct()
+            public List<ProductDTOforID> GetProduct()
             {
             List<ProductEntity> entity = _context.TBL_Products.ToList();
 
-            List<ProductDTO> product = _mapper.Map<List < ProductDTO > >(entity);
+            List<ProductDTOforID> product = _mapper.Map<List < ProductDTOforID > >(entity);
 
             return product;
             }
@@ -37,14 +38,19 @@ namespace WebApiWithEfcore.Repository
 
             public bool PutProduct(int id, ProductDTO product)
             {
+            var prod = _context.TBL_Products.Find(id);
+            if (prod == null)
+            {
+                return false;
 
-            ProductEntity entity = _mapper.Map<ProductEntity>(product);
-            entity.UpdatedBy = "admin";
-            entity.UpdateOn= DateTime.Now;
+            }
+                    _mapper.Map(product,prod);
+            prod.UpdatedBy = "admin";
+            prod.UpdateOn= DateTime.Now;
 
-            _context.Entry(entity).State = EntityState.Modified;
 
-                try
+
+            try
                 {
                      _context.SaveChanges();
                 }
@@ -71,7 +77,7 @@ namespace WebApiWithEfcore.Repository
 
             entity.CreatedBy = "admin";
             entity.CreatedOn = DateTime.Now;
-            entity.UpdateOn = null;
+            entity.UpdateOn = DateTime.MinValue;
             entity.UpdatedBy = "";
 
 

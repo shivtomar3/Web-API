@@ -15,7 +15,7 @@ namespace WebApiWithEfcore.Model
 
         public string UpdatedBy { set; get; }
  
-        public DateTime? UpdateOn { set; get; }
+        public DateTime ? UpdateOn { set; get; }
 
     }
     

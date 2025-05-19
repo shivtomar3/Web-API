@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebApiWithEfcore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd56ad9ad9e1cd72b81f56cc693b8f2a9c2d7044")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1d9de5893eef974afd4746dd003de79eb9349ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebApiWithEfcore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebApiWithEfcore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

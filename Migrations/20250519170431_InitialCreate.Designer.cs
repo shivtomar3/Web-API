@@ -12,8 +12,8 @@ using WebApiWithEfcore.Model;
 namespace WebApiWithEfcore.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20250516132805_Initial-Migration")]
-    partial class InitialMigration
+    [Migration("20250519170431_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace WebApiWithEfcore.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("UpdateOn")
+                    b.Property<DateTime?>("UpdateOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")

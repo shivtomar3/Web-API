@@ -30,7 +30,7 @@ namespace WebApiWithEfcore.Controllers
 
         // GET: api/ProductEntities
         [HttpGet("Get_All_Product")]
-        public  List<ProductDTO> GetTBL_Products()
+        public  List<ProductDTOforID> GetTBL_Products()
         {
             var Product= _productService.GetProduct();
 

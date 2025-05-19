@@ -44,7 +44,7 @@ namespace WebApiWithEfcore.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("UpdateOn")
+                    b.Property<DateTime?>("UpdateOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UpdatedBy")

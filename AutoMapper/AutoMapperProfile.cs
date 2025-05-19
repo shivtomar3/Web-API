@@ -8,7 +8,8 @@ namespace WebApiWithEfcore.AutoMapper
 
         public AutoMapperProfile()
         {
-            CreateMap<ProductDTO, ProductEntity>().ReverseMap();
+            CreateMap<ProductDTO,ProductEntity >();
+            CreateMap<ProductEntity,ProductDTOforID>();
         }
        
 
